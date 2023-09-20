@@ -1,7 +1,7 @@
 import math
-print("Выберете операцию или завершите программу")
 choice=0
 while choice!=11:
+  print("Выберете операцию или завершите программу")
   print("1. Сложение")
   print("2. Вычитание")
   print("3. Умножение")
@@ -17,8 +17,8 @@ while choice!=11:
     choice=int(input())
   except:
     print("Введите действие")
-  if choice in range (1,11):
-    if choice in range (1,5):
+  if choice in range (1,10):
+    if choice in range (1,4):
       try:
         num1=float(input("Введите число 1:"))
         num2=float(input("Введите число 2:"))
@@ -33,35 +33,40 @@ while choice!=11:
       print("Ответ:", num1*num2)
     if choice==4:
       if num2==0:
-        print("Число 2 не может равняться 0, введите число ещё раз")
+        print("Число 2 не может равняться 0")
         continue
       print(num1/num2)
-    if choice in range (5,11):
-     try:
+    print("Выберете операцию ещё раз:")
+  if choice in range (5,11):
+    try:
       num=float(input("Введите число:"))
-     except:
+    except:
       print("Это не число!")
       continue
-     if choice==5:
+    if choice==5:
       st=int(input("Введите степень:"))
       print(num**st)
-     if choice==6:
+    if choice==6:
       if num>=0:
         print(math.sqrt(num))
       else:
         print("Число не может быть отрицательным, введите его ещё раз:")
         continue
-     if choice==7:
-      num3 = int(num)
-      if num>=0:
-        print(math.factorial(num3))
-      else:
-        print("Число не может быть отрицательным, введите его ещё раз:")
+    if choice==7:
+      if num==0:
+        print(1)
+      if num<0:
+        print("Введите натуральное число:")
         continue
-     if choice==8:
+      else:
+        k=1
+        while k<=num:
+          num=num*k
+        print(num)
+    if choice==8:
       print(math.sin(num))
-     if choice==9:
+    if choice==9:
       print(math.cos(num))
-     if choice==10:
+    if choice==10:
       print(math.tan(num))
     print("Выберете операцию ещё раз:")
